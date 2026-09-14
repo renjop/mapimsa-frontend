@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^6.15.6",
     "@coreui/chartjs": "^4.2.0",
     "@coreui/coreui": "^5.9.0",
     "@coreui/icons": "^3.1.0",
@@ -20,6 +21,7 @@
     "@popperjs/core": "^2.11.8",
     "@reduxjs/toolkit": "^2.2.7",
     "@types/react": "^19.2.18",
+    "aws-amplify": "^6.20.0",
     "axios": "1.19.0",
     "base64-arraybuffer": "^1.0.2",
     "chart.js": "^4.5.1",
