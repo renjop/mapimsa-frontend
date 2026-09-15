@@ -5,9 +5,17 @@ import {
     createBrowserRouter,
     RouterProvider
 } from 'react-router-dom';
+import {AuthProvider} from "react-oidc-context";
+import awsmobile from "./aws-exports.ts";
 
 const router = createBrowserRouter([
-    {path: '*', element: <App/>}
+    {
+        path: '*',
+        element:
+            <AuthProvider {...awsmobile}>
+                <App/>
+            </AuthProvider>
+    }
 ]);
 
 createRoot(document.getElementById('wrapper')!).render(
