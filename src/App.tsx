@@ -1,5 +1,6 @@
 import {useAuth} from "react-oidc-context";
 import awsmobile from "./aws-exports.ts";
+import "./css/styles.scss";
 
 function App() {
     const auth = useAuth();
@@ -10,8 +11,8 @@ function App() {
         window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
     };
 
-    const testApiCall = async ()=>{
-        const response = await window.fetch("http://localhost:8006/api/auth/token",{
+    const testApiCall = async () => {
+        const response = await window.fetch("http://localhost:8006/api/auth/token", {
             headers: {
                 Authorization: `Bearer ${auth.user?.access_token}`,
             },
@@ -41,10 +42,16 @@ function App() {
                         console.log(err);
                     })
                 }}>Sign out
-                </button><br/>
-                <button onClick={()=>{
-                    testApiCall().then((response) => {console.log(response)}).catch((err) => {console.log(err)})
-                }}>Call API</button>
+                </button>
+                <br/>
+                <button onClick={() => {
+                    testApiCall().then((response) => {
+                        console.log(response)
+                    }).catch((err) => {
+                        console.log(err)
+                    })
+                }}>Call API
+                </button>
             </div>
         );
     }
@@ -58,7 +65,8 @@ function App() {
                 })
             }}>Sign in
             </button>
-            <button onClick={() => signOutRedirect()}>Sign out</button><br/>
+            <button onClick={() => signOutRedirect()}>Sign out</button>
+            <br/>
 
         </div>
     );

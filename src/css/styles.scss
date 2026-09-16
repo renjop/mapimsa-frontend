@@ -1,0 +1,119 @@
+@use "@coreui/coreui/scss/coreui" as * with (
+  $enable-deprecation-messages: false,
+  $sidebar-bg: #27374DFF,
+  $link-decoration: 'none',
+  $link-hover-decoration: 'none',
+);
+@use "@coreui/coreui/scss/mixins/breakpoints" as *;
+@use "@coreui/chartjs/scss/coreui-chartjs";
+
+.react-confirm-alert-overlay {
+  background: rgba(123, 123, 123, 0.9)
+}
+
+.react-confirm-alert {
+  border: 2px solid #4e73df;
+  width: 580px;
+  background: white;
+}
+
+.react-confirm-alert-button-group > button {
+  background: #4e73df;
+}
+
+.react-confirm-alert-body > h1 {
+  color: #4e73df;
+}
+
+
+body {
+  background-color: var(--cui-tertiary-bg);
+}
+
+.wrapper {
+  width: 100%;
+  padding-inline: var(--cui-sidebar-occupy-start, 0) var(--cui-sidebar-occupy-end, 0);
+  will-change: auto;
+  @include transition(padding .15s);
+}
+
+.header > .container-fluid,
+.sidebar-header {
+  min-height: calc(4rem + 1px); // stylelint-disable-line function-disallowed-list
+}
+
+.sidebar-brand-full {
+  margin-left: 3px;
+}
+
+.sidebar-header {
+  .nav-underline-border {
+    --cui-nav-underline-border-link-padding-x: 1rem;
+    --cui-nav-underline-border-gap: 0;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: calc(4rem + 1px); // stylelint-disable-line function-disallowed-list
+  }
+}
+
+.sidebar-toggler {
+  margin-inline-start: auto;
+}
+
+.sidebar-narrow,
+.sidebar-narrow-unfoldable:not(:hover) {
+  .sidebar-toggler {
+    margin-inline-end: auto;
+  }
+}
+
+.header > .container-fluid + .container-fluid {
+  min-height: 3rem;
+}
+
+.footer {
+  min-height: calc(3rem + 1px); // stylelint-disable-line function-disallowed-list
+}
+
+@include color-mode(dark) {
+  body {
+    background-color: var(--cui-dark-bg-subtle);
+  }
+
+  .footer {
+    --cui-footer-bg: var(--cui-body-bg);
+  }
+}
+
+
+.scroll-to-top {
+  background: #5a5c6980;
+  bottom: 1rem;
+  color: #fff;
+  display: none;
+  height: 2.75rem;
+  line-height: 46px;
+  position: fixed;
+  right: 1rem;
+  text-align: center;
+  width: 2.75rem;
+}
+
+.page-item {
+  cursor: pointer;
+}
+
+.form-check-input {
+  height: calc(1.5em + .75rem + 2px);
+  width: calc(1.5em + .75rem + 2px);
+}
+
+footer.sticky-footer {
+  .copyright {
+    font-size: .8rem;
+    line-height: 1;
+  }
+}

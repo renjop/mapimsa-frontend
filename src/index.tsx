@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom';
 import {AuthProvider} from "react-oidc-context";
 import awsmobile from "./aws-exports.ts";
+import store from "./store";
+import {Provider} from 'react-redux'
 
 const router = createBrowserRouter([
     {
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('wrapper')!).render(
     <StrictMode>
-        <RouterProvider router={router}/>
+        <Provider store={store}>
+            <RouterProvider router={router}/>
+        </Provider>
     </StrictMode>,
 )
